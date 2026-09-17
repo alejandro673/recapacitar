@@ -65,6 +65,7 @@
         display: flex;
         gap: 16px;
         flex-wrap: wrap;
+        margin-top: 24px;
       }
 
       .btn {
@@ -90,6 +91,11 @@
         border: 1px solid rgba(56, 189, 248, 0.4);
         color: var(--secondary);
       }
+
+      .btn-danger {
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -101,8 +107,9 @@
         Cuando subas los cambios a tu repositorio, Cloudflare podrá publicar automáticamente este sitio.
       </p>
       <div class="buttons">
-        <a class="btn btn-primary" href="https://github.com/alejandro673/recapacitar" target="_blank" rel="noreferrer">Ver repositorio</a>
-        <a class="btn btn-secondary" href="https://pages.cloudflare.com" target="_blank" rel="noreferrer">Cloudflare Pages</a>
+        <a class="btn btn-primary" href="./auth/login.html">Ir al Login</a>
+        <a class="btn btn-danger" href="./auth/register.html">Registrarse</a>
+        <a class="btn btn-secondary" href="https://github.com/alejandro673/recapacitar" target="_blank" rel="noreferrer">Ver repositorio</a>
       </div>
     </main>
   </body>
