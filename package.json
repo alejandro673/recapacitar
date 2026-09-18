@@ -1,0 +1,15 @@
+{
+  "name": "recapacitar-cloudflare-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev public --d1=DB",
+    "deploy": "wrangler pages deploy public",
+    "db:create": "wrangler d1 create recapacitar-db",
+    "db:migrate:local": "wrangler d1 execute recapacitar-db --local --file=functions/schema.sql",
+    "db:migrate:remote": "wrangler d1 execute recapacitar-db --remote --file=functions/schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

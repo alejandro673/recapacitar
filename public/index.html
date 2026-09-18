@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panel de cuenta con Cloudflare Pages y D1">
+  <title>Recapacitar · Tu espacio personal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Recapacitar inicio"><span class="brand-mark">R</span><span>recapacitar</span></a>
+      <span class="environment"><span class="status-dot"></span>Cloudflare / D1</span>
+    </header>
+
+    <main>
+      <section id="auth-view" class="auth-layout">
+        <div class="intro-panel">
+          <p class="eyebrow">Tu espacio, en orden</p>
+          <h1>Vuelve a lo que <em>importa.</em></h1>
+          <p class="intro-copy">Una cuenta sencilla para guardar tus datos y tenerlos disponibles cuando los necesites.</p>
+          <div class="feature-list">
+            <div class="feature"><span class="feature-icon">01</span><span>Perfil centralizado y privado</span></div>
+            <div class="feature"><span class="feature-icon">02</span><span>Sesiones protegidas por cookie</span></div>
+            <div class="feature"><span class="feature-icon">03</span><span>Datos persistentes en SQLite D1</span></div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="form-heading">
+            <div class="tabs" role="tablist" aria-label="Acceso a la cuenta">
+              <button class="tab is-active" data-mode="login" role="tab" aria-selected="true">Iniciar sesion</button>
+              <button class="tab" data-mode="register" role="tab" aria-selected="false">Crear cuenta</button>
+            </div>
+            <p id="form-subtitle">Entra para ver tu espacio personal.</p>
+          </div>
+
+          <form id="auth-form" novalidate>
+            <div id="name-field" class="field hidden">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Como te llamas">
+            </div>
+            <div class="field">
+              <label for="email">Correo electronico</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+            </div>
+            <div class="field">
+              <label for="password">Contrasena</label>
+              <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Minimo 8 caracteres" required minlength="8">
+            </div>
+            <p id="form-message" class="form-message" role="alert"></p>
+            <button id="submit-button" class="primary-button" type="submit">Entrar a mi espacio <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="secure-note"><span>◆</span> Tus datos viajan cifrados</p>
+        </div>
+      </section>
+
+      <section id="profile-view" class="profile-layout hidden" aria-live="polite">
+        <div class="profile-hero">
+          <p class="eyebrow">Espacio personal</p>
+          <div class="profile-title-row"><h1>Hola, <span id="profile-name">...</span>.</h1><span class="member-badge">MIEMBRO</span></div>
+          <p class="intro-copy">Este es el resumen de los datos asociados a tu cuenta.</p>
+        </div>
+        <div class="profile-content">
+          <div class="avatar" id="avatar">R</div>
+          <div class="details">
+            <div class="detail-row"><span class="detail-label">Nombre completo</span><strong id="detail-name">—</strong></div>
+            <div class="detail-row"><span class="detail-label">Correo electronico</span><strong id="detail-email">—</strong></div>
+            <div class="detail-row"><span class="detail-label">Cuenta creada</span><strong id="detail-date">—</strong></div>
+          </div>
+          <button id="logout-button" class="secondary-button" type="button">Cerrar sesion <span aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+    </main>
+    <footer><span>Recapacitar © 2026</span><span>Construido sobre Cloudflare Pages + D1</span></footer>
+  </div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
